@@ -22,10 +22,10 @@ app.set("view engine", "ejs");
 
 //cors
 const corsOptions = {
-  origin: process.env.ALLOWED_CLIENTS.split(",")
-}
+  origin: process.env.ALLOWED_CLIENTS,
+};
 
-app.use(corsOptions)
+app.use(cors(corsOptions))
 
 //Database Connection
 const connectDB = require("./config/db");
