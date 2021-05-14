@@ -7,14 +7,11 @@ function connectDB() {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
+  }).then(() => {
+    console.log('Database Connected')
+  }).catch((err) => {
+    console.log(err)
   });
-  const connection = mongoose.connection;
-
-  connection
-    .once("open", () => {
-      console.log("Database Connected...");
-    })
-    .catch((err) => console.log("Connection Failed."));
 }
 
 module.exports = connectDB;
